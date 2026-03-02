@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Location } from '@/types/location';
-import { products } from '@/data/products';
+import { categories, getProductsByCategorySlug } from '@/data/products';
 
 type PricingSectionProps = {
   location: Location;
@@ -31,7 +31,7 @@ export default function PricingSection({ location }: PricingSectionProps) {
           </p>
         </div>
 
-        {/* Price table */}
+        {/* Price table by category */}
         <div className="mx-auto mt-12 max-w-4xl overflow-x-auto rounded-xl shadow-lg">
           <table className="w-full min-w-[560px] border-collapse text-left">
             <thead>
@@ -40,7 +40,13 @@ export default function PricingSection({ location }: PricingSectionProps) {
                   scope="col"
                   className="px-6 py-4 text-sm font-semibold tracking-wide"
                 >
-                  Tipo
+                  Categoría
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-4 text-sm font-semibold tracking-wide text-center"
+                >
+                  Productos
                 </th>
                 <th
                   scope="col"
@@ -54,42 +60,50 @@ export default function PricingSection({ location }: PricingSectionProps) {
                 >
                   Precio Máx
                 </th>
-                <th
-                  scope="col"
-                  className="px-6 py-4 text-sm font-semibold tracking-wide text-right"
-                >
-                  Grosor
-                </th>
               </tr>
             </thead>
             <tbody>
-              {products.map((product, index) => (
-                <tr
-                  key={product.slug}
-                  className={`border-b border-gray-200 transition-colors hover:bg-primary/5 ${
-                    index % 2 === 0 ? 'bg-white' : 'bg-bg-alt'
-                  }`}
-                >
-                  <td className="px-6 py-4 text-sm font-medium text-primary">
-                    <Link
-                      href={`/suelos-pvc/${product.slug}`}
-                      className="transition-colors hover:text-accent"
-                    >
-                      {product.name}
-                    </Link>
-                  </td>
-                  <td className="px-6 py-4 text-sm text-right text-[var(--color-text-light)]">
-                    {formatPrice(product.priceRange.min)}&nbsp;&euro;/m&sup2;
-                  </td>
-                  <td className="px-6 py-4 text-sm text-right text-[var(--color-text-light)]">
-                    {formatPrice(product.priceRange.max)}&nbsp;&euro;/m&sup2;
-                  </td>
-                  <td className="px-6 py-4 text-sm text-right text-[var(--color-text-light)]">
-                    {product.thicknessOptions[0]} &ndash;{' '}
-                    {product.thicknessOptions[product.thicknessOptions.length - 1]}
-                  </td>
-                </tr>
-              ))}
+              {categories.map((cat, index) => {
+                const catProducts = getProductsByCategorySlug(cat.slug);
+                const withPrices = catProducts.filter((p) => p.pricePerSqm != null);
+                const minPrice = withPrices.length > 0
+                  ? Math.min(...withPrices.map((p) => p.pricePerSqm!))
+                  : null;
+                const maxPrice = withPrices.length > 0
+                  ? Math.max(...withPrices.map((p) => p.pricePerSqm!))
+                  : null;
+
+                return (
+                  <tr
+                    key={cat.slug}
+                    className={`border-b border-gray-200 transition-colors hover:bg-primary/5 ${
+                      index % 2 === 0 ? 'bg-white' : 'bg-bg-alt'
+                    }`}
+                  >
+                    <td className="px-6 py-4 text-sm font-medium text-primary">
+                      <Link
+                        href={`/suelos-pvc/${cat.slug}`}
+                        className="transition-colors hover:text-accent"
+                      >
+                        {cat.name}
+                      </Link>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-center text-[var(--color-text-light)]">
+                      {catProducts.length}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-right text-[var(--color-text-light)]">
+                      {minPrice != null
+                        ? `${formatPrice(minPrice)}\u00A0€/m²`
+                        : 'Consultar'}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-right text-[var(--color-text-light)]">
+                      {maxPrice != null
+                        ? `${formatPrice(maxPrice)}\u00A0€/m²`
+                        : 'Consultar'}
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

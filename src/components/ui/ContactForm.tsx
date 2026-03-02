@@ -15,12 +15,13 @@ type FormData = {
 
 const TIPOS_SUELO = [
   { value: '', label: 'Selecciona un tipo de suelo' },
-  { value: 'vinilico-click', label: 'Vinílico Click' },
-  { value: 'vinilico-pegado', label: 'Vinílico Pegado' },
-  { value: 'spc', label: 'SPC (Stone Polymer Composite)' },
-  { value: 'losetas', label: 'Losetas PVC' },
-  { value: 'rollo', label: 'PVC en Rollo' },
-  { value: 'otro', label: 'Otro / No estoy seguro' },
+  { value: 'eventos', label: 'Eventos (ferias, congresos)' },
+  { value: 'domestico', label: 'Uso Doméstico' },
+  { value: 'oficinas', label: 'Oficinas' },
+  { value: 'colegios', label: 'Colegios y Centros Educativos' },
+  { value: 'hospital', label: 'Hospital y Sanitario' },
+  { value: 'otros', label: 'Otros (transporte, náutico, exterior)' },
+  { value: 'no-seguro', label: 'No estoy seguro' },
 ];
 
 const inputStyles = clsx(

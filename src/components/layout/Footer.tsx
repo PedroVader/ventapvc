@@ -2,11 +2,12 @@ import clsx from 'clsx';
 import Link from 'next/link';
 
 const productLinks = [
-  { label: 'Vinílico Click', href: '/suelos-pvc/vinilico-click' },
-  { label: 'Rollo', href: '/suelos-pvc/rollo' },
-  { label: 'SPC', href: '/suelos-pvc/spc' },
-  { label: 'Losetas', href: '/suelos-pvc/losetas' },
-  { label: 'Autoadhesivo', href: '/suelos-pvc/autoadhesivo' },
+  { label: 'Eventos', href: '/suelos-pvc/eventos' },
+  { label: 'Doméstico', href: '/suelos-pvc/domestico' },
+  { label: 'Oficinas', href: '/suelos-pvc/oficinas' },
+  { label: 'Colegios', href: '/suelos-pvc/colegios' },
+  { label: 'Hospital', href: '/suelos-pvc/hospital' },
+  { label: 'Otros', href: '/suelos-pvc/otros' },
 ];
 
 const serviceLinks = [

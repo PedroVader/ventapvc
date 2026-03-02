@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { locations } from '@/data/locations';
+import { categories, products } from '@/data/products';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://ventapvc.com';
@@ -7,11 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/suelos-pvc`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/suelos-pvc/vinilico-click`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/suelos-pvc/rollo`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/suelos-pvc/spc`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/suelos-pvc/losetas`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/suelos-pvc/autoadhesivo`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/suelos-pvc-barcelona`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/instalacion`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/presupuesto`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.7 },
@@ -19,6 +15,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/sobre-nosotros`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.7 },
   ];
+
+  // Category pages
+  const categoryPages: MetadataRoute.Sitemap = categories.map((c) => ({
+    url: `${baseUrl}/suelos-pvc/${c.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }));
+
+  // Product pages
+  const productPages: MetadataRoute.Sitemap = products.map((p) => ({
+    url: `${baseUrl}/suelos-pvc/${p.categorySlug}/${p.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
 
   const bcnPages: MetadataRoute.Sitemap = locations
     .filter((l) => l.isBcnCity)
@@ -38,5 +50,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  return [...staticPages, ...bcnPages, ...cityPages];
+  return [...staticPages, ...categoryPages, ...productPages, ...bcnPages, ...cityPages];
 }
