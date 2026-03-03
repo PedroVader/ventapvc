@@ -3,8 +3,6 @@ import Link from 'next/link';
 
 import { locations } from '@/data/locations';
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 // ---------------------------------------------------------------------------
@@ -190,9 +188,7 @@ export default function BarcelonaHubPage() {
 
   return (
     <>
-      <Header />
-
-      <main>
+      <div>
         {/* Breadcrumbs */}
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={[{ label: 'Suelos PVC Barcelona' }]} />
@@ -458,9 +454,7 @@ export default function BarcelonaHubPage() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
+      </div>
     </>
   );
 }

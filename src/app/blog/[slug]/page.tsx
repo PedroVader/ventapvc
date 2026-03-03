@@ -37,28 +37,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     .join(" ");
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
       <nav className="mb-8">
         <Link
           href="/blog"
-          className="text-sm font-medium text-zinc-600 hover:text-zinc-900"
+          className="inline-flex items-center gap-1 text-sm font-medium text-[var(--color-text-light)] hover:text-accent transition-colors"
         >
-          &larr; Volver al Blog
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+          </svg>
+          Volver al Blog
         </Link>
       </nav>
 
       <article>
         <header>
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-900">
+          <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-4 text-sm text-zinc-500">
+          <div className="mt-4 h-1 w-20 rounded-full bg-accent" />
+          <p className="mt-4 text-sm text-[var(--color-text-light)]">
             Publicado en el Blog de VentaPVC
           </p>
         </header>
 
         <section className="mt-8">
-          <p className="text-lg leading-8 text-zinc-600">
+          <p className="text-lg leading-relaxed text-[var(--color-text-light)]">
             Este artículo está en preparación. Próximamente encontrarás aquí
             contenido detallado y útil sobre este tema relacionado con suelos de
             PVC.
@@ -66,10 +70,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </section>
 
         <section className="mt-12">
-          <h2 className="text-2xl font-semibold text-zinc-900">
+          <h2 className="text-2xl font-bold text-primary">
             Contenido en Desarrollo
           </h2>
-          <p className="mt-4 text-zinc-600">
+          <p className="mt-4 text-[var(--color-text-light)]">
             Nuestro equipo de redacción está trabajando en este artículo para
             ofrecerte la información más completa y actualizada. Si tienes alguna
             pregunta mientras tanto, no dudes en contactarnos.
@@ -77,14 +81,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </section>
       </article>
 
-      <div className="mt-12 border-t border-zinc-200 pt-8">
-        <h2 className="text-xl font-semibold text-zinc-900">
+      <div className="mt-12 border-t border-gray-200 pt-8">
+        <h2 className="text-xl font-bold text-primary">
           Artículos Relacionados
         </h2>
-        <p className="mt-4 text-zinc-600">
+        <p className="mt-4 text-[var(--color-text-light)]">
           Próximamente mostraremos aquí artículos relacionados con este tema.
           Mientras tanto, puedes explorar nuestro{" "}
-          <Link href="/blog" className="font-medium text-zinc-900 underline">
+          <Link href="/blog" className="font-medium text-accent underline hover:text-accent-hover transition-colors">
             blog completo
           </Link>
           .

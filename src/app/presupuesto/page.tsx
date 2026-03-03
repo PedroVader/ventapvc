@@ -11,12 +11,13 @@ export const metadata: Metadata = {
 
 export default function PresupuestoPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold tracking-tight text-zinc-900">
+    <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <h1 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
         Pide Presupuesto Gratis para Suelos PVC
       </h1>
+      <div className="mt-4 h-1 w-20 rounded-full bg-accent" />
 
-      <p className="mt-6 text-lg leading-8 text-zinc-600">
+      <p className="mt-6 text-lg leading-relaxed text-[var(--color-text-light)]">
         Obtén un presupuesto personalizado y sin compromiso para tu proyecto de
         suelos de PVC. Solo necesitamos unos datos básicos sobre tu espacio y
         te respondemos en menos de 24 horas laborables con un precio cerrado que
@@ -24,50 +25,68 @@ export default function PresupuestoPage() {
       </p>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-zinc-900">
+        <h2 className="text-2xl font-bold text-primary">
           Qué Necesitamos para Presupuestarte
         </h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-zinc-600">
-          <li>Superficie aproximada en metros cuadrados.</li>
-          <li>Tipo de estancia (vivienda, local comercial, oficina, etc.).</li>
-          <li>Tipo de suelo deseado (click, SPC, rollo, losetas o autoadhesivo).</li>
-          <li>Si necesitas servicio de instalación profesional.</li>
-          <li>Población y código postal de entrega.</li>
+        <ul className="mt-4 space-y-3 text-[var(--color-text-light)]">
+          {[
+            'Superficie aproximada en metros cuadrados.',
+            'Tipo de estancia (vivienda, local comercial, oficina, etc.).',
+            'Tipo de suelo deseado (click, SPC, rollo, losetas o autoadhesivo).',
+            'Si necesitas servicio de instalación profesional.',
+            'Población y código postal de entrega.',
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+              </svg>
+              {item}
+            </li>
+          ))}
         </ul>
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-zinc-900">
+        <h2 className="text-2xl font-bold text-primary">
           Formulario de Presupuesto
         </h2>
-        <p className="mt-4 text-zinc-600">
+        <p className="mt-4 text-[var(--color-text-light)]">
           El formulario interactivo estará disponible próximamente. Mientras
           tanto, puedes enviarnos tu solicitud directamente por correo
           electrónico o llamarnos por teléfono para recibir atención inmediata.
         </p>
-        <div className="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-8 text-center">
-          <p className="text-lg font-medium text-zinc-900">
+        <div className="mt-6 rounded-xl border border-gray-200 bg-bg-alt p-8 text-center">
+          <p className="text-lg font-semibold text-primary">
             Escríbenos a{" "}
-            <a href="mailto:ventas@disstands.com" className="underline hover:text-accent transition-colors">ventas@disstands.com</a>
+            <a href="mailto:ventas@disstands.com" className="text-accent underline hover:text-accent-hover transition-colors">ventas@disstands.com</a>
             {" "}o{" "}
-            <a href="mailto:moquetas@disstands.com" className="underline hover:text-accent transition-colors">moquetas@disstands.com</a>
+            <a href="mailto:moquetas@disstands.com" className="text-accent underline hover:text-accent-hover transition-colors">moquetas@disstands.com</a>
           </p>
-          <p className="mt-2 text-zinc-600">
+          <p className="mt-2 text-[var(--color-text-light)]">
             o llámanos al teléfono de atención al cliente
           </p>
         </div>
       </section>
 
       <section className="mt-12">
-        <h2 className="text-2xl font-semibold text-zinc-900">
+        <h2 className="text-2xl font-bold text-primary">
           Nuestro Compromiso
         </h2>
-        <ul className="mt-4 list-disc pl-6 space-y-2 text-zinc-600">
-          <li>Respuesta en menos de 24 horas laborables.</li>
-          <li>Precio cerrado sin costes ocultos.</li>
-          <li>Asesoramiento técnico incluido.</li>
-          <li>Sin compromiso de compra.</li>
-          <li>Envío de muestras gratuitas bajo petición.</li>
+        <ul className="mt-4 space-y-3 text-[var(--color-text-light)]">
+          {[
+            'Respuesta en menos de 24 horas laborables.',
+            'Precio cerrado sin costes ocultos.',
+            'Asesoramiento técnico incluido.',
+            'Sin compromiso de compra.',
+            'Envío de muestras gratuitas bajo petición.',
+          ].map((item) => (
+            <li key={item} className="flex items-start gap-2">
+              <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
+              </svg>
+              {item}
+            </li>
+          ))}
         </ul>
       </section>
     </div>

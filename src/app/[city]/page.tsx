@@ -13,8 +13,6 @@ import {
   generateOpenGraph,
 } from '@/lib/seo';
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import Breadcrumbs from '@/components/layout/Breadcrumbs';
 
 import HeroSection from '@/components/landing/HeroSection';
@@ -129,10 +127,7 @@ export default async function CityLandingPage({ params }: Props) {
       <FaqSchema faqs={faqs} />
       <ProductSchema location={location} />
 
-      <Header />
-
-      <main>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
 
@@ -157,9 +152,6 @@ export default async function CityLandingPage({ params }: Props) {
         <TestimonialsSection location={location} />
         <NearbySection location={location} />
         <CtaSection location={location} />
-      </main>
-
-      <Footer />
     </>
   );
 }

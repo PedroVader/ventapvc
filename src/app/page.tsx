@@ -1,6 +1,4 @@
 import Link from 'next/link';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { categories, getProductsByCategorySlug, products } from '@/data/products';
 import { locations } from '@/data/locations';
 
@@ -67,7 +65,6 @@ export default function Home() {
 
   return (
     <>
-      <Header />
 
       {/* ══════════════════════════════════════════════════════════════════════
           HERO
@@ -436,7 +433,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
     </>
   );
 }
