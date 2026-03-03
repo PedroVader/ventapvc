@@ -38,7 +38,7 @@ export default function NearbySection({ location }: { location: Location }) {
               key={nearby.slug}
               href={getLocationUrl(nearby)}
               prefetch={true}
-              className="group flex min-w-[200px] shrink-0 flex-col rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-accent/30 hover:shadow-md md:min-w-0"
+              className="group flex min-w-[200px] shrink-0 flex-col overflow-hidden rounded-xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-200 hover:border-accent/30 hover:shadow-md md:min-w-0"
             >
               <div className="mb-2 flex items-center gap-2">
                 <span
@@ -64,7 +64,7 @@ export default function NearbySection({ location }: { location: Location }) {
                     />
                   </svg>
                 </span>
-                <h3 className="text-base font-semibold text-primary transition-colors group-hover:text-accent">
+                <h3 className="min-w-0 truncate text-base font-semibold text-primary transition-colors group-hover:text-accent">
                   {nearby.name}
                 </h3>
               </div>

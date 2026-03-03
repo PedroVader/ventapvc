@@ -320,12 +320,12 @@ export default async function ProductPage({ params }: Props) {
                 <Link
                   key={rp.slug}
                   href={`/suelos-pvc/${category.slug}/${rp.slug}`}
-                  className="group rounded-xl border border-gray-200 bg-white p-6 transition-shadow hover:shadow-lg"
+                  className="group overflow-hidden rounded-xl border border-gray-200 bg-white p-6 transition-shadow hover:shadow-lg"
                 >
-                  <h3 className="font-bold text-primary transition-colors group-hover:text-accent">
+                  <h3 className="truncate font-bold text-primary transition-colors group-hover:text-accent">
                     {rp.name}
                   </h3>
-                  <p className="mt-2 text-sm text-[var(--color-text-light)]">
+                  <p className="mt-2 text-sm text-[var(--color-text-light)] line-clamp-2">
                     {rp.shortDescription}
                   </p>
                   {rp.priceDisplay && (

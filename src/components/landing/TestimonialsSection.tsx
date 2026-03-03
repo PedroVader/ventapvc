@@ -196,24 +196,24 @@ export default function TestimonialsSection({
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.name}
-              className="flex flex-col rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
+              className="flex flex-col overflow-hidden rounded-xl border border-gray-100 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-md"
             >
               <StarRating rating={testimonial.rating} />
 
               <blockquote className="mt-4 flex-1">
-                <p className="text-sm leading-relaxed text-[var(--color-text-light)] sm:text-base">
+                <p className="text-sm leading-relaxed text-[var(--color-text-light)] line-clamp-4 sm:text-base">
                   &ldquo;{testimonial.quote}&rdquo;
                 </p>
               </blockquote>
 
               <div className="mt-6 border-t border-gray-100 pt-4">
-                <p className="font-semibold text-primary">
+                <p className="truncate font-semibold text-primary">
                   {testimonial.name}
                 </p>
-                <p className="mt-0.5 text-sm text-[var(--color-text-light)]">
+                <p className="mt-0.5 truncate text-sm text-[var(--color-text-light)]">
                   {testimonial.city}
                 </p>
-                <p className="mt-1 inline-block rounded-full bg-bg-alt px-3 py-1 text-xs font-medium text-primary">
+                <p className="mt-1 inline-block max-w-full truncate rounded-full bg-bg-alt px-3 py-1 text-xs font-medium text-primary">
                   {testimonial.product}
                 </p>
               </div>

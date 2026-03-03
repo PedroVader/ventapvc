@@ -117,16 +117,16 @@ export default async function CategoryPage({ params }: Props) {
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                   />
                   {product.priceDisplay && (
-                    <span className="absolute right-4 top-4 rounded-full bg-accent px-3 py-1 text-sm font-bold text-white shadow">
+                    <span className="absolute right-3 top-3 max-w-[60%] truncate rounded-full bg-accent px-3 py-1 text-sm font-bold text-white shadow">
                       {product.priceDisplay}
                     </span>
                   )}
                 </div>
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-lg font-bold text-primary transition-colors group-hover:text-accent">
+                  <h3 className="truncate text-lg font-bold text-primary transition-colors group-hover:text-accent">
                     {product.name}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-text-light)]">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-[var(--color-text-light)] line-clamp-3">
                     {product.shortDescription}
                   </p>
                   <ul className="mt-4 space-y-1">
@@ -136,17 +136,17 @@ export default async function CategoryPage({ params }: Props) {
                         <svg className="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
                         </svg>
-                        <span>{f}</span>
+                        <span className="truncate">{f}</span>
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-4 flex items-center justify-between border-t border-gray-100 pt-4">
+                  <div className="mt-4 flex items-center justify-between gap-2 border-t border-gray-100 pt-4">
                     {product.priceDisplay ? (
-                      <span className="text-base font-bold text-accent">{product.priceDisplay}</span>
+                      <span className="min-w-0 truncate text-base font-bold text-accent">{product.priceDisplay}</span>
                     ) : (
                       <span className="text-sm text-[var(--color-text-light)]">Consultar precio</span>
                     )}
-                    <span className="inline-flex items-center gap-1 text-sm font-medium text-primary transition-transform group-hover:translate-x-1">
+                    <span className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-primary transition-transform group-hover:translate-x-1">
                       Ver producto
                       {/* Heroicon: arrow-right */}
                       <svg className="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">

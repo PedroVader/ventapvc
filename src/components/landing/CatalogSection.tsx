@@ -61,14 +61,12 @@ export default function CatalogSection({ location }: CatalogSectionProps) {
 
                 {/* Card body */}
                 <div className="flex flex-1 flex-col p-6">
-                  <h3 className="text-lg font-bold text-primary group-hover:text-primary-light sm:text-xl">
+                  <h3 className="truncate text-lg font-bold text-primary group-hover:text-primary-light sm:text-xl">
                     {cat.name}
                   </h3>
 
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-text-light)]">
-                    {cat.description.length > 160
-                      ? cat.description.substring(0, 160).trim() + '...'
-                      : cat.description}
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--color-text-light)] line-clamp-3">
+                    {cat.description}
                   </p>
 
                   {/* Product names preview */}
@@ -90,7 +88,7 @@ export default function CatalogSection({ location }: CatalogSectionProps) {
                             clipRule="evenodd"
                           />
                         </svg>
-                        <span>{product.name}{product.priceDisplay ? ` — ${product.priceDisplay}` : ''}</span>
+                        <span className="truncate">{product.name}{product.priceDisplay ? ` — ${product.priceDisplay}` : ''}</span>
                       </li>
                     ))}
                     {catProducts.length > 3 && (
@@ -101,12 +99,12 @@ export default function CatalogSection({ location }: CatalogSectionProps) {
                   </ul>
 
                   {/* CTA */}
-                  <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
-                    <div>
+                  <div className="mt-6 flex items-center justify-between gap-2 border-t border-gray-100 pt-4">
+                    <div className="min-w-0">
                       <p className="text-xs text-[var(--color-text-light)]">
                         Categoría
                       </p>
-                      <p className="text-base font-bold text-primary">
+                      <p className="truncate text-base font-bold text-primary">
                         {cat.name}
                       </p>
                     </div>

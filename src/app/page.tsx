@@ -180,22 +180,20 @@ export default function Home() {
                     )}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-lg font-bold text-primary group-hover:text-accent transition-colors">
+                    <h3 className="truncate text-lg font-bold text-primary group-hover:text-accent transition-colors">
                       {cat.name}
                     </h3>
-                    <p className="mt-2 flex-1 text-sm text-[var(--color-text-light)]">
-                      {cat.description.length > 120
-                        ? cat.description.slice(0, 120).trim() + '...'
-                        : cat.description}
+                    <p className="mt-2 flex-1 text-sm text-[var(--color-text-light)] line-clamp-3">
+                      {cat.description}
                     </p>
-                    <div className="mt-4 flex items-center justify-between">
-                      <span className="text-sm font-semibold text-accent">
+                    <div className="mt-4 flex items-center justify-between gap-2">
+                      <span className="min-w-0 truncate text-sm font-semibold text-accent">
                         {minPrice != null
                           ? `Desde ${minPrice.toLocaleString('es-ES', { minimumFractionDigits: 2 })}\u00A0€/m²`
                           : 'Consultar'}
                         {' · '}{catProducts.length} productos
                       </span>
-                      <span className="text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
+                      <span className="shrink-0 text-sm font-medium text-primary group-hover:translate-x-1 transition-transform">
                         Ver más →
                       </span>
                     </div>
@@ -262,8 +260,8 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <div>
-                  <span className="font-semibold text-primary">{city.name}</span>
+                <div className="min-w-0">
+                  <span className="block truncate font-semibold text-primary">{city.name}</span>
                   <span className="block text-xs text-[var(--color-text-light)]">Ver suelos PVC</span>
                 </div>
               </Link>
@@ -315,7 +313,7 @@ export default function Home() {
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {testimonials.map((t) => (
-              <article key={t.name} className="flex flex-col rounded-xl bg-white p-6 shadow-md">
+              <article key={t.name} className="flex flex-col overflow-hidden rounded-xl bg-white p-6 shadow-md">
                 <div className="mb-3 flex gap-0.5">
                   {Array.from({ length: t.stars }).map((_, i) => (
                     <svg key={i} className="h-5 w-5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
@@ -323,12 +321,12 @@ export default function Home() {
                     </svg>
                   ))}
                 </div>
-                <blockquote className="flex-1 text-[var(--color-text-light)]">
+                <blockquote className="flex-1 text-[var(--color-text-light)] line-clamp-4">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
                 <div className="mt-4 border-t border-gray-100 pt-4">
-                  <p className="font-semibold text-primary">{t.name}</p>
-                  <p className="text-sm text-[var(--color-text-light)]">
+                  <p className="truncate font-semibold text-primary">{t.name}</p>
+                  <p className="truncate text-sm text-[var(--color-text-light)]">
                     {t.city} · {t.product}
                   </p>
                 </div>
