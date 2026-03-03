@@ -128,7 +128,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@ventapvc.com"
+                  href="mailto:ventas@disstands.com"
                   className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-accent"
                 >
                   <svg
@@ -144,7 +144,28 @@ export default function Footer() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
-                  info@ventapvc.com
+                  ventas@disstands.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:moquetas@disstands.com"
+                  className="flex items-center gap-2 text-sm transition-colors duration-200 hover:text-accent"
+                >
+                  <svg
+                    className="h-4 w-4 shrink-0 text-accent"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  moquetas@disstands.com
                 </a>
               </li>
             </ul>

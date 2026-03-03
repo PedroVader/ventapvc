@@ -35,10 +35,14 @@ export default function ContactoPage() {
             </h3>
             <p className="mt-1 text-zinc-600">
               Escríbenos a{" "}
-              <span className="font-medium text-zinc-900">
-                info@ventapvc.com
-              </span>{" "}
-              y te responderemos en menos de 24 horas laborables.
+              <a href="mailto:ventas@disstands.com" className="font-medium text-zinc-900 underline hover:text-accent transition-colors">
+                ventas@disstands.com
+              </a>{" "}
+              (ventas y presupuestos) o a{" "}
+              <a href="mailto:moquetas@disstands.com" className="font-medium text-zinc-900 underline hover:text-accent transition-colors">
+                moquetas@disstands.com
+              </a>{" "}
+              (asesoramiento técnico sobre pavimentos) y te responderemos en menos de 24 horas laborables.
             </p>
           </li>
           <li>

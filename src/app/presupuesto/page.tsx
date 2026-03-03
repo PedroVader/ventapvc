@@ -47,7 +47,10 @@ export default function PresupuestoPage() {
         </p>
         <div className="mt-6 rounded-lg border border-zinc-200 bg-zinc-50 p-8 text-center">
           <p className="text-lg font-medium text-zinc-900">
-            Escríbenos a info@ventapvc.com
+            Escríbenos a{" "}
+            <a href="mailto:ventas@disstands.com" className="underline hover:text-accent transition-colors">ventas@disstands.com</a>
+            {" "}o{" "}
+            <a href="mailto:moquetas@disstands.com" className="underline hover:text-accent transition-colors">moquetas@disstands.com</a>
           </p>
           <p className="mt-2 text-zinc-600">
             o llámanos al teléfono de atención al cliente

@@ -1,11 +1,20 @@
 // src/data/products.ts
 // Catálogo real de productos Disstands para ventapvc.com
 
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
 export interface ProductCategory {
   slug: string;
   name: string;
   description: string;
+  longDescription: string;
   icon: string;
+  metaTitle: string;
+  metaDescription: string;
+  faqs: FAQ[];
 }
 
 export interface Product {
@@ -29,6 +38,7 @@ export interface Product {
   };
   features: string[];
   bestFor: string[];
+  faqs: FAQ[];
   hasPage: boolean;
   image: string;
 }
@@ -40,43 +50,181 @@ export const categories: ProductCategory[] = [
     slug: 'eventos',
     name: 'Eventos',
     description:
-      'Suelos de PVC diseñados para eventos, ferias, congresos y espacios temporales. Instalación ultrarrápida, resistencia al tráfico intenso y acabados profesionales que transforman cualquier espacio en minutos.',
+      'Suelos de PVC para eventos, ferias, congresos y espacios temporales. Instalación ultrarrápida, resistencia al tráfico intenso y acabados profesionales desde 5,20 €/m².',
+    longDescription:
+      'Los suelos de PVC para eventos de Disstands están diseñados para cubrir grandes superficies de forma rápida y eficiente. Fabricados en rollo, permiten transformar pabellones feriales, centros de convenciones y espacios diáfanos en cuestión de horas. Cada modelo cumple la clasificación al fuego Bfl-s1, un requisito obligatorio en la mayoría de recintos feriales de España. La gama incluye desde opciones económicas con superficie lisa hasta modelos de alta densidad que soportan carretillas y maquinaria pesada. Todos los pavimentos son reutilizables, lo que amortiza la inversión en pocas ferias.',
     icon: 'eventos',
+    metaTitle: 'Suelos PVC para Eventos y Ferias — Desde 5,20 €/m² | Disstands',
+    metaDescription:
+      'Pavimentos de PVC para eventos, ferias y congresos. Instalación en horas, clasificación al fuego Bfl-s1, reutilizables. 4 modelos desde 5,20 €/m². Envío en toda España.',
+    faqs: [
+      {
+        question: '¿Cuánto tiempo se tarda en instalar un suelo PVC para eventos?',
+        answer: 'Un equipo de dos personas puede cubrir entre 200 y 300 m² por hora con nuestros rollos para eventos. Para un stand de 50 m², la instalación completa se realiza en menos de 30 minutos. Solo necesitas cinta de doble cara y un cúter para los recortes.',
+      },
+      {
+        question: '¿Los suelos PVC para ferias cumplen la normativa contra incendios?',
+        answer: 'Todos nuestros modelos para eventos tienen clasificación al fuego Bfl-s1 según la norma EN 13501-1, que es la exigida en la mayoría de recintos feriales españoles como Fira Barcelona, IFEMA Madrid o Feria Valencia.',
+      },
+      {
+        question: '¿Se pueden reutilizar los suelos PVC de eventos?',
+        answer: 'Sí. Los modelos Artic y Compact están diseñados para enrollarse y almacenarse después de cada uso. Con un manejo cuidadoso, un rollo puede utilizarse entre 5 y 10 eventos antes de necesitar sustitución.',
+      },
+      {
+        question: '¿Qué suelo PVC es mejor para una feria industrial con maquinaria pesada?',
+        answer: 'El PVC Compact es la mejor opción para ferias industriales. Su estructura de alta densidad y capa de uso de 0,7 mm soportan carretillas, montacargas y stands con maquinaria pesada sin deformarse.',
+      },
+    ],
   },
   {
     slug: 'domestico',
     name: 'Uso Doméstico',
     description:
-      'Amplia gama de suelos de PVC para hogares: desde imitación madera y piedra hasta diseños decorativos. Soluciones resistentes, impermeables y fáciles de mantener para salones, dormitorios, cocinas y baños.',
+      'Suelos PVC para hogares con más de 13 diseños: imitación madera, piedra, mármol, cemento y patrones decorativos. Impermeables, resistentes y fáciles de mantener desde 6,20 €/m².',
+    longDescription:
+      'La gama doméstica de Disstands ofrece la colección más amplia de suelos PVC en rollo para viviendas. Con 13 líneas diferentes, cubre todas las estéticas posibles: desde la calidez del roble natural de Bindis Wood hasta la sofisticación del mármol Carrara de Marmoredis, pasando por los diseños geométricos contemporáneos de Twisdis y el look industrial del cemento pulido. Todos los modelos son 100 % impermeables, aptos para cocinas y baños, compatibles con suelo radiante hasta 28 °C y requieren un mantenimiento mínimo. La instalación es sencilla con adhesivo o cinta de doble cara sobre cualquier pavimento existente liso.',
     icon: 'domestico',
+    metaTitle: 'Suelos PVC para Casa — 13 Diseños desde 6,20 €/m² | Disstands',
+    metaDescription:
+      'Suelos de PVC para hogares: imitación madera, piedra, mármol, cemento y diseños decorativos. 13 líneas Disstands impermeables y fáciles de instalar. Desde 6,20 €/m².',
+    faqs: [
+      {
+        question: '¿Se puede poner suelo PVC en cocinas y baños?',
+        answer: 'Sí. Todos los suelos PVC domésticos de Disstands son 100 % impermeables. El agua no penetra ni daña el material, lo que los convierte en una alternativa ideal a la cerámica para cocinas, baños y zonas húmedas. Los modelos Bindis Stone y Bindis Loseta incluyen además superficie antideslizante R10.',
+      },
+      {
+        question: '¿El suelo PVC es compatible con suelo radiante?',
+        answer: 'Sí. Toda la gama doméstica de Disstands es compatible con calefacción por suelo radiante hasta 28 °C. La baja resistencia térmica del PVC permite una transmisión eficiente del calor, y su estructura flexible se adapta a las dilataciones térmicas sin deformarse.',
+      },
+      {
+        question: '¿Cuánto dura un suelo PVC en una vivienda?',
+        answer: 'La vida útil depende de la capa de uso. Los modelos económicos como Mipoldis (0,15 mm) duran entre 5 y 8 años con uso normal. Los modelos premium como PVC Pradis (0,40 mm) superan los 15 años en uso doméstico. Todos incluyen tratamiento de fábrica contra manchas y arañazos.',
+      },
+      {
+        question: '¿Se puede instalar suelo PVC sobre el pavimento existente?',
+        answer: 'Sí. Todos nuestros suelos PVC en rollo se instalan directamente sobre el suelo existente siempre que esté limpio, seco y razonablemente liso. No necesitas retirar el pavimento antiguo, lo que ahorra tiempo y dinero en la reforma.',
+      },
+    ],
   },
   {
     slug: 'oficinas',
     name: 'Oficinas',
     description:
-      'Pavimentos de PVC profesionales para oficinas y espacios de trabajo. Losetas modulares, rollos y sistemas click con excelente aislamiento acústico y resistencia al tráfico comercial.',
+      'Pavimentos PVC para oficinas: losetas modulares, rollo continuo y sistema click. Aislamiento acústico hasta 18 dB y resistencia a sillas con ruedas desde 12,80 €/m².',
+    longDescription:
+      'Los pavimentos de PVC para oficinas de Disstands resuelven las necesidades específicas de los entornos de trabajo: resistencia al desgaste de sillas con ruedas, absorción acústica para reducir el ruido ambiental y estética profesional que refuerza la imagen corporativa. La gama incluye tres formatos — loseta modular, rollo continuo y lama click — para adaptarse a cada tipo de proyecto, desde una reforma parcial de despachos hasta la instalación completa de un edificio de oficinas. Los modelos premium alcanzan una reducción acústica de 18 dB y cuentan con tratamiento PUR para un mantenimiento simplificado.',
     icon: 'oficinas',
+    metaTitle: 'Suelos PVC para Oficinas — Losetas y Rollos desde 12,80 €/m² | Disstands',
+    metaDescription:
+      'Suelos de PVC para oficinas y espacios de trabajo. Losetas modulares, rollo y click. Aislamiento acústico hasta 18 dB, resistentes a sillas con ruedas. Desde 12,80 €/m².',
+    faqs: [
+      {
+        question: '¿Qué tipo de suelo PVC es mejor para una oficina de planta abierta?',
+        answer: 'Para oficinas de planta abierta recomendamos la Loseta Oficina Premium. Su formato modular de 60,96 x 60,96 cm permite crear zonas diferenciadas con distintos colores, su aislamiento acústico de 18 dB reduce el ruido ambiental, y las losetas dañadas se reemplazan individualmente sin afectar al resto del suelo.',
+      },
+      {
+        question: '¿Los suelos PVC para oficinas resisten las sillas con ruedas?',
+        answer: 'Sí. Todos nuestros modelos para oficinas están testados para soportar el desgaste de sillas con ruedas según la norma EN 425. Los modelos Premium y Click Oficina, con capas de uso de 0,55-0,70 mm, ofrecen la máxima resistencia a la indentación y al rodamiento continuo.',
+      },
+      {
+        question: '¿Se puede instalar suelo PVC en oficinas sin interrumpir la actividad?',
+        answer: 'Sí. El PVC Click Oficina se instala como suelo flotante sin adhesivos, lo que permite hacerlo por zonas durante fines de semana o fuera de horario laboral. Las losetas modulares también permiten una instalación progresiva, área por área.',
+      },
+      {
+        question: '¿El suelo PVC de oficina es compatible con suelo técnico elevado?',
+        answer: 'El PVC Click Oficina está diseñado específicamente para instalarse sobre suelo técnico elevado. Su sistema de instalación flotante no requiere adhesivos, lo que mantiene el acceso a las canalizaciones bajo el pavimento.',
+      },
+    ],
   },
   {
     slug: 'colegios',
     name: 'Colegios',
     description:
-      'Suelos de PVC para centros educativos: aulas, gimnasios, pasillos y comedores. Productos seguros, antideslizantes, fáciles de limpiar y con alta resistencia al desgaste infantil.',
+      'Suelos PVC para centros educativos: aulas, gimnasios, pasillos y comedores. Antideslizantes (R10), fáciles de desinfectar y con certificación al fuego Bfl-s1 desde 13,50 €/m².',
+    longDescription:
+      'Los pavimentos de PVC para colegios de Disstands cumplen con los requisitos de seguridad, higiene y durabilidad que exigen los centros educativos. La gama abarca desde suelos para aulas con colores que favorecen el aprendizaje hasta pavimentos deportivos con amortiguación de impactos para gimnasios, pasando por modelos antiestáticos para aulas de informática y suelos compactos de alta resistencia para las zonas de mayor tránsito. Todos los productos tienen certificación al fuego Bfl-s1, superficie antideslizante R10 y están formulados para resistir los productos de desinfección utilizados en entornos escolares.',
     icon: 'colegios',
+    metaTitle: 'Suelos PVC para Colegios y Centros Educativos — Desde 13,50 €/m² | Disstands',
+    metaDescription:
+      'Pavimentos PVC para colegios: aulas, gimnasios, pasillos y comedores. Antideslizantes R10, certificación Bfl-s1, fáciles de desinfectar. 4 modelos desde 13,50 €/m².',
+    faqs: [
+      {
+        question: '¿Los suelos PVC para colegios son antideslizantes?',
+        answer: 'Sí. Todos los modelos para centros educativos tienen certificación antideslizante R10 según la norma DIN 51130. Esta clasificación garantiza un agarre seguro incluso con la suela mojada, reduciendo significativamente el riesgo de caídas en pasillos, gimnasios y comedores.',
+      },
+      {
+        question: '¿Qué suelo PVC es adecuado para un gimnasio escolar?',
+        answer: 'El PVC Deportivo está diseñado específicamente para gimnasios escolares. Su estructura de 6,5 mm con espuma amortiguadora absorbe impactos, reduce el riesgo de lesiones y proporciona la tracción necesaria para actividades deportivas. Cumple las normativas deportivas para uso escolar y permite marcar líneas de juego con colores.',
+      },
+      {
+        question: '¿El suelo PVC escolar soporta los productos de desinfección?',
+        answer: 'Sí. Todos nuestros pavimentos para colegios están formulados para resistir los productos de limpieza y desinfección habituales en entornos escolares, incluyendo lejía diluida y desinfectantes con base de amonio cuaternario. La superficie sellada impide que los líquidos penetren en el material.',
+      },
+      {
+        question: '¿Qué suelo PVC es mejor para pasillos escolares con mucho tráfico?',
+        answer: 'El PVC Compacto Educativo con su capa de uso de 0,70 mm está diseñado específicamente para zonas de alto tránsito en centros educativos. Su estructura compacta resiste el paso diario de cientos de alumnos durante años sin mostrar signos de desgaste significativos.',
+      },
+    ],
   },
   {
     slug: 'hospital',
     name: 'Hospital',
     description:
-      'Pavimentos de PVC para entornos sanitarios: hospitales, clínicas, residencias y laboratorios. Superficies higiénicas, conductivas y antiestáticas con certificaciones sanitarias.',
+      'Pavimentos PVC sanitarios para hospitales, clínicas y residencias. Superficies bacteriostáticas, conductivas y antiestáticas con certificaciones EN 1081 desde 19,50 €/m².',
+    longDescription:
+      'La gama hospitalaria de Disstands cumple con los estándares más exigentes del sector sanitario. Los pavimentos Fordis — disponibles en versión heterogénea y homogénea — incorporan tratamiento bacteriostático permanente y se sueldan en caliente para crear superficies completamente herméticas sin juntas donde puedan acumularse bacterias. Para zonas con equipos médicos sensibles, los modelos antiestáticos y conductivos cumplen la norma EN 1081 de resistividad eléctrica, protegiendo resonancias magnéticas, equipos de rayos X y monitores de UCI. El PVC Conductivo, con resistividad inferior a 10⁶ ohmios, está certificado para quirófanos con gases anestésicos inflamables según normativa ATEX.',
     icon: 'hospital',
+    metaTitle: 'Suelos PVC para Hospitales y Clínicas — Desde 19,50 €/m² | Disstands',
+    metaDescription:
+      'Pavimentos sanitarios de PVC para hospitales: bacteriostáticos, antiestáticos y conductivos. Norma EN 1081, soldadura en caliente. 4 modelos desde 19,50 €/m².',
+    faqs: [
+      {
+        question: '¿Los suelos PVC hospitalarios son antibacterianos?',
+        answer: 'Sí. Todos los modelos de la gama hospitalaria incluyen tratamiento bacteriostático permanente integrado en la masa del PVC. Este tratamiento inhibe la proliferación de bacterias en la superficie del suelo. Además, la soldadura en caliente de las juntas crea una superficie completamente hermética.',
+      },
+      {
+        question: '¿Qué diferencia hay entre el PVC antiestático y el conductivo para hospitales?',
+        answer: 'El PVC Antiestático Hospital tiene una resistividad de entre 10⁶ y 10⁹ ohmios, suficiente para proteger equipos médicos sensibles como resonancias magnéticas. El PVC Conductivo tiene una resistividad inferior a 10⁶ ohmios y está certificado para quirófanos con gases anestésicos inflamables donde una chispa estática podría causar una explosión.',
+      },
+      {
+        question: '¿El PVC homogéneo para hospitales se puede restaurar?',
+        answer: 'Sí. El Fordis Homogéneo tiene una composición idéntica en todo su espesor, lo que permite renovar su superficie mediante lijado y pulido profesional. Este proceso devuelve al suelo su aspecto original y puede repetirse varias veces, prolongando la vida útil del pavimento de forma prácticamente indefinida.',
+      },
+      {
+        question: '¿Los suelos PVC hospitalarios cumplen la normativa de reacción al fuego?',
+        answer: 'Sí. Todos nuestros pavimentos sanitarios tienen clasificación al fuego Bfl-s1, que es la exigida en hospitales y centros sanitarios por el Código Técnico de la Edificación (CTE) y las normativas autonómicas sanitarias en España.',
+      },
+    ],
   },
   {
     slug: 'otros',
-    name: 'Otros',
+    name: 'Otros Usos',
     description:
-      'Suelos de PVC especiales para transporte, náutica, exterior y garajes. Soluciones técnicas de alta resistencia para usos industriales y entornos exigentes.',
+      'Suelos PVC especiales para transporte (EN 45545), náutica, exterior y garajes. Soluciones técnicas de alta resistencia para entornos industriales y exigentes.',
+    longDescription:
+      'La categoría de usos especiales de Disstands agrupa pavimentos de PVC técnicos para entornos con requisitos específicos que no encajan en las categorías convencionales. Incluye suelos certificados EN 45545 para autobuses y trenes, pavimentos resistentes al agua salada y la radiación UV para embarcaciones, suelos antideslizantes R11 para terrazas y porches cubiertos, y losetas de alta carga para garajes que soportan el peso de vehículos. Cada producto está diseñado y certificado para las condiciones particulares de su entorno de uso.',
     icon: 'otros',
+    metaTitle: 'Suelos PVC Especiales: Transporte, Náutica, Exterior y Garaje | Disstands',
+    metaDescription:
+      'Suelos PVC para usos especiales: transporte (EN 45545), embarcaciones, terrazas y garajes. Soluciones técnicas Disstands de alta resistencia. Consultar precios.',
+    faqs: [
+      {
+        question: '¿Qué certificación necesita un suelo PVC para autobuses y trenes?',
+        answer: 'Los suelos PVC para transporte público deben cumplir la norma EN 45545 de reacción al fuego y emisión de humos en material ferroviario. Nuestro PVC Transporte cumple esta norma y está certificado para uso en autobuses urbanos, trenes de cercanías, metro y autocares de largo recorrido.',
+      },
+      {
+        question: '¿Se puede poner suelo PVC en una terraza exterior?',
+        answer: 'Sí, siempre que la terraza esté cubierta o semicubierta. El PVC Exterior de Disstands resiste la lluvia, la humedad ambiental elevada y los cambios de temperatura estacionales. Su superficie antideslizante R11 garantiza seguridad en condiciones húmedas. No se recomienda para exposición directa y continua al sol sin protección.',
+      },
+      {
+        question: '¿El suelo PVC para garaje soporta el peso de un coche?',
+        answer: 'Sí. Las losetas PVC Garaje de 7 mm de espesor están diseñadas para soportar el peso estático y dinámico de vehículos turismos. Su estructura compacta resiste además las manchas de aceite, gasolina y líquidos de freno, y su formato modular permite desmontarlas para limpieza o reparaciones.',
+      },
+      {
+        question: '¿El suelo PVC náutico resiste el agua salada?',
+        answer: 'Sí. El PVC Náutico de Disstands está formulado específicamente para resistir la exposición continua al agua salada, la radiación UV y los cambios extremos de temperatura propios del ambiente marino. Se utiliza en cubiertas de yates, veleros y embarcaciones de recreo.',
+      },
+    ],
   },
 ];
 
@@ -111,6 +259,7 @@ export const products: Product[] = [
       'Clasificación al fuego Bfl-s1',
     ],
     bestFor: ['Ferias y congresos', 'Eventos corporativos', 'Stands y exposiciones', 'Espacios temporales'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-artic.webp',
   },
@@ -141,6 +290,7 @@ export const products: Product[] = [
       'Clasificación al fuego Bfl-s1',
     ],
     bestFor: ['Galas y eventos premium', 'Showrooms y presentaciones', 'Stands de diseño', 'Espacios VIP en ferias'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-artic-madera.webp',
   },
@@ -171,6 +321,7 @@ export const products: Product[] = [
       'Reutilizable en múltiples eventos',
     ],
     bestFor: ['Congresos y convenciones', 'Ferias de larga duración', 'Eventos con público de pie', 'Salas de conferencias temporales'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-silencio-confort.webp',
   },
@@ -201,6 +352,7 @@ export const products: Product[] = [
       'Clasificación al fuego Bfl-s1',
     ],
     bestFor: ['Ferias industriales', 'Exposiciones de automóviles', 'Eventos con montaje pesado', 'Espacios de logística temporal'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-compact.webp',
   },
@@ -233,6 +385,7 @@ export const products: Product[] = [
       'Compatible con suelo radiante hasta 28 °C',
     ],
     bestFor: ['Salones y dormitorios', 'Cocinas y baños', 'Reformas rápidas de viviendas', 'Pisos de alquiler'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/bindis-wood.webp',
   },
@@ -263,6 +416,7 @@ export const products: Product[] = [
       'Resistente a manchas y productos de limpieza',
     ],
     bestFor: ['Cocinas y baños modernos', 'Recibidores y zonas de paso', 'Viviendas de estilo mediterráneo', 'Reformas sin obras'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/bindis-stone.webp',
   },
@@ -293,6 +447,7 @@ export const products: Product[] = [
       'Amplia variedad de diseños decorativos',
     ],
     bestFor: ['Cocinas de estilo clásico', 'Baños con look cerámico', 'Recibidores y halls', 'Viviendas vintage o de diseño'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/bindis-loseta.webp',
   },
@@ -323,6 +478,7 @@ export const products: Product[] = [
       'Tratamiento anti-manchas de fábrica',
     ],
     bestFor: ['Hogares con niños y mascotas', 'Salones de uso intensivo', 'Dormitorios principales', 'Viviendas unifamiliares'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/taraladis.webp',
   },
@@ -352,6 +508,7 @@ export const products: Product[] = [
       'Fácil mantenimiento con fregona húmeda',
     ],
     bestFor: ['Presupuestos ajustados', 'Pisos de alquiler', 'Reformas express', 'Habitaciones secundarias'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/mipoldis.webp',
   },
@@ -382,6 +539,7 @@ export const products: Product[] = [
       'Compatible con suelo radiante',
     ],
     bestFor: ['Viviendas de estilo nórdico', 'Habitaciones pequeñas', 'Salones luminosos', 'Dormitorios minimalistas'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/lundis.webp',
   },
@@ -412,6 +570,7 @@ export const products: Product[] = [
       'Fácil de cortar y adaptar a cualquier espacio',
     ],
     bestFor: ['Revestimiento integral de baños', 'Paredes y suelos de cocinas', 'Espacios comerciales', 'Reformas sin obras'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/muraldis.webp',
   },
@@ -441,6 +600,7 @@ export const products: Product[] = [
       'Aporta personalidad y carácter al espacio',
     ],
     bestFor: ['Viviendas de diseño contemporáneo', 'Halls y recibidores', 'Cocinas modernas', 'Espacios comerciales creativos'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/twisdis.webp',
   },
@@ -471,6 +631,7 @@ export const products: Product[] = [
       'Capa de uso reforzada de 0,30 mm',
     ],
     bestFor: ['Salones de gama alta', 'Recibidores elegantes', 'Baños de diseño', 'Viviendas de lujo accesible'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/marmoredis.webp',
   },
@@ -500,6 +661,7 @@ export const products: Product[] = [
       'Ideal para espacios de diseño',
     ],
     bestFor: ['Tiendas de moda', 'Showrooms y galerías', 'Estudios de diseño', 'Viviendas con estilo propio'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/oro-y-plata-pvc.webp',
   },
@@ -530,6 +692,7 @@ export const products: Product[] = [
       'Fácil de limpiar con aspiradora',
     ],
     bestFor: ['Dormitorios', 'Vestidores', 'Zonas de relax', 'Hogares con personas alérgicas'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/flocado.webp',
   },
@@ -560,6 +723,7 @@ export const products: Product[] = [
       'Sin la complejidad de aplicar microcemento real',
     ],
     bestFor: ['Lofts y viviendas industriales', 'Salones contemporáneos', 'Cocinas minimalistas', 'Espacios comerciales modernos'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/imitacion-cemento.webp',
   },
@@ -591,6 +755,7 @@ export const products: Product[] = [
       'Diseños de madera premium ultra-realistas',
     ],
     bestFor: ['Viviendas de gama alta', 'Hogares con máxima exigencia', 'Salones y dormitorios principales', 'Reformas de calidad premium'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-pradis.webp',
   },
@@ -623,6 +788,7 @@ export const products: Product[] = [
       'Resistente a sillas con ruedas',
     ],
     bestFor: ['Oficinas de planta abierta', 'Despachos y salas de reuniones', 'Espacios de coworking', 'Recepciones corporativas'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/loseta-oficina.webp',
   },
@@ -653,6 +819,7 @@ export const products: Product[] = [
       'Certificación medioambiental',
     ],
     bestFor: ['Oficinas corporativas de alto tráfico', 'Sedes de grandes empresas', 'Zonas de representación', 'Edificios de oficinas de clase A'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/loseta-oficina-premium.webp',
   },
@@ -684,6 +851,7 @@ export const products: Product[] = [
       'Limpieza industrial compatible',
     ],
     bestFor: ['Oficinas que buscan suelo continuo', 'Espacios de trabajo de superficie media', 'Despachos profesionales', 'Clínicas y consultas'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-rollo-oficina.webp',
   },
@@ -714,6 +882,7 @@ export const products: Product[] = [
       'Resistente a sillas con ruedas',
     ],
     bestFor: ['Oficinas con suelo técnico', 'Reformas con mínimo tiempo de parada', 'Oficinas de alquiler', 'Espacios de coworking'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-click-oficina.webp',
   },
@@ -747,6 +916,7 @@ export const products: Product[] = [
       'Resistente al mobiliario escolar',
     ],
     bestFor: ['Aulas de infantil y primaria', 'Bibliotecas escolares', 'Salas de profesores', 'Guarderías'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-aula.webp',
   },
@@ -778,6 +948,7 @@ export const products: Product[] = [
       'Fácil mantenimiento con limpieza mecánica',
     ],
     bestFor: ['Gimnasios escolares', 'Pabellones deportivos', 'Salas de actividades', 'Patios cubiertos'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-deportivo.webp',
   },
@@ -808,6 +979,7 @@ export const products: Product[] = [
       'Instalación con adhesivo conductivo',
     ],
     bestFor: ['Aulas de informática', 'Laboratorios de tecnología', 'Salas de servidores escolares', 'Talleres de electrónica'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-antiestatico.webp',
   },
@@ -838,6 +1010,7 @@ export const products: Product[] = [
       'Cumple normativas de seguridad escolar',
     ],
     bestFor: ['Pasillos de colegios', 'Comedores escolares', 'Halls de entrada', 'Escaleras y zonas de paso'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-compacto-educativo.webp',
   },
@@ -871,6 +1044,7 @@ export const products: Product[] = [
       'Fácil desinfección con productos hospitalarios',
     ],
     bestFor: ['Hospitales y clínicas', 'Residencias de mayores', 'Consultas médicas', 'Centros de salud'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/fordis-heterogeneo.webp',
   },
@@ -901,6 +1075,7 @@ export const products: Product[] = [
       'Apto para quirófanos y salas blancas',
     ],
     bestFor: ['Quirófanos', 'UCI y zonas críticas', 'Salas blancas', 'Laboratorios hospitalarios'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/fordis-homogeneo.webp',
   },
@@ -931,6 +1106,7 @@ export const products: Product[] = [
       'Compatible con protocolos de desinfección hospitalaria',
     ],
     bestFor: ['Salas de resonancia magnética', 'Salas de rayos X', 'UCI con equipamiento sensible', 'Laboratorios de análisis'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-antiestatico-hospital.webp',
   },
@@ -961,6 +1137,7 @@ export const products: Product[] = [
       'Certificado para quirófanos de última generación',
     ],
     bestFor: ['Quirófanos con gases anestésicos', 'Zonas ATEX hospitalarias', 'Salas de operaciones especiales', 'Áreas de alto riesgo'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-conductivo.webp',
   },
@@ -992,6 +1169,7 @@ export const products: Product[] = [
       'Textura antideslizante para pasajeros de pie',
     ],
     bestFor: ['Autobuses urbanos', 'Trenes y tranvías', 'Autocares de largo recorrido', 'Vehículos de transporte especial'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-transporte.webp',
   },
@@ -1020,6 +1198,7 @@ export const products: Product[] = [
       'Fácil mantenimiento en ambiente marino',
     ],
     bestFor: ['Yates y veleros', 'Lanchas y barcos de recreo', 'Cubiertas y zonas húmedas', 'Embarcaciones comerciales'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-nautico.webp',
   },
@@ -1050,6 +1229,7 @@ export const products: Product[] = [
       'Capa de uso de 0,50 mm',
     ],
     bestFor: ['Terrazas techadas', 'Porches y pérgolas', 'Zonas de piscina cubiertas', 'Balcones y galerías'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-exterior.webp',
   },
@@ -1078,6 +1258,7 @@ export const products: Product[] = [
       'Fácil limpieza con manguera o hidrolimpiadora',
     ],
     bestFor: ['Garajes privados', 'Talleres mecánicos', 'Zonas de estacionamiento', 'Espacios de almacenamiento'],
+    faqs: [],
     hasPage: true,
     image: '/images/products/pvc-garaje.webp',
   },
