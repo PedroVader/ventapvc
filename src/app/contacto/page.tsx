@@ -54,11 +54,6 @@ export default function ContactoPage() {
                 ventas@disstands.com
               </a>{" "}
               (ventas y presupuestos)
-              <br />
-              <a href="mailto:moquetas@disstands.com" className="font-medium text-primary underline hover:text-accent transition-colors">
-                moquetas@disstands.com
-              </a>{" "}
-              (asesoramiento técnico sobre pavimentos)
             </p>
           </li>
           <li className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">

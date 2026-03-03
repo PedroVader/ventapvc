@@ -66,8 +66,6 @@ export default function PresupuestoPage() {
           <p className="text-[var(--color-text-light)]">
             Escríbenos a{" "}
             <a href="mailto:ventas@disstands.com" className="font-medium text-accent underline hover:text-accent-hover transition-colors">ventas@disstands.com</a>
-            {" "}o{" "}
-            <a href="mailto:moquetas@disstands.com" className="font-medium text-accent underline hover:text-accent-hover transition-colors">moquetas@disstands.com</a>
           </p>
           <p className="mt-2 text-sm text-[var(--color-text-light)]">
             o llámanos al teléfono de atención al cliente
