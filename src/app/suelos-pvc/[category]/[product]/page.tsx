@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
@@ -124,13 +123,12 @@ export default async function ProductPage({ params }: Props) {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Product image */}
           <div className="overflow-hidden rounded-xl bg-gradient-to-br from-primary/5 to-primary-light/10">
-            <Image
+            <img
               src={product.image}
               alt={product.name}
               width={800}
               height={500}
               className="h-full w-full object-cover"
-              priority
             />
           </div>
 

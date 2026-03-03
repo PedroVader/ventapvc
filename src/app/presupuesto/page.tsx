@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactForm from "@/components/ui/ContactForm";
 
 export const metadata: Metadata = {
   title: "Pide Presupuesto Gratis para Suelos PVC",
@@ -24,47 +25,13 @@ export default function PresupuestoPage() {
         incluye material, transporte e instalación si la necesitas.
       </p>
 
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold text-primary">
-          Qué Necesitamos para Presupuestarte
-        </h2>
-        <ul className="mt-4 space-y-3 text-[var(--color-text-light)]">
-          {[
-            'Superficie aproximada en metros cuadrados.',
-            'Tipo de estancia (vivienda, local comercial, oficina, etc.).',
-            'Tipo de suelo deseado (click, SPC, rollo, losetas o autoadhesivo).',
-            'Si necesitas servicio de instalación profesional.',
-            'Población y código postal de entrega.',
-          ].map((item) => (
-            <li key={item} className="flex items-start gap-2">
-              <svg className="mt-0.5 h-5 w-5 shrink-0 text-accent" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clipRule="evenodd" />
-              </svg>
-              {item}
-            </li>
-          ))}
-        </ul>
-      </section>
-
+      {/* Formulario de presupuesto */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold text-primary">
           Formulario de Presupuesto
         </h2>
-        <p className="mt-4 text-[var(--color-text-light)]">
-          El formulario interactivo estará disponible próximamente. Mientras
-          tanto, puedes enviarnos tu solicitud directamente por correo
-          electrónico o llamarnos por teléfono para recibir atención inmediata.
-        </p>
-        <div className="mt-6 rounded-xl border border-gray-200 bg-bg-alt p-8 text-center">
-          <p className="text-lg font-semibold text-primary">
-            Escríbenos a{" "}
-            <a href="mailto:ventas@disstands.com" className="text-accent underline hover:text-accent-hover transition-colors">ventas@disstands.com</a>
-            {" "}o{" "}
-            <a href="mailto:moquetas@disstands.com" className="text-accent underline hover:text-accent-hover transition-colors">moquetas@disstands.com</a>
-          </p>
-          <p className="mt-2 text-[var(--color-text-light)]">
-            o llámanos al teléfono de atención al cliente
-          </p>
+        <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <ContactForm formName="presupuesto" showProjectFields />
         </div>
       </section>
 
@@ -88,6 +55,24 @@ export default function PresupuestoPage() {
             </li>
           ))}
         </ul>
+      </section>
+
+      {/* Contact alternatives */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-primary">
+          ¿Prefieres Contacto Directo?
+        </h2>
+        <div className="mt-4 rounded-xl border border-gray-200 bg-bg-alt p-6 text-center">
+          <p className="text-[var(--color-text-light)]">
+            Escríbenos a{" "}
+            <a href="mailto:ventas@disstands.com" className="font-medium text-accent underline hover:text-accent-hover transition-colors">ventas@disstands.com</a>
+            {" "}o{" "}
+            <a href="mailto:moquetas@disstands.com" className="font-medium text-accent underline hover:text-accent-hover transition-colors">moquetas@disstands.com</a>
+          </p>
+          <p className="mt-2 text-sm text-[var(--color-text-light)]">
+            o llámanos al teléfono de atención al cliente
+          </p>
+        </div>
       </section>
     </div>
   );

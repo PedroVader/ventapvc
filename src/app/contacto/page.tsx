@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/ui/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contacto VentaPVC: Atención al Cliente",
@@ -25,9 +26,20 @@ export default function ContactoPage() {
         Elige el canal que más te convenga.
       </p>
 
+      {/* Formulario de contacto */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold text-primary">
-          Canales de Contacto
+          Formulario de Contacto
+        </h2>
+        <div className="mt-6 rounded-xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <ContactForm formName="contacto" />
+        </div>
+      </section>
+
+      {/* Canales de contacto */}
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold text-primary">
+          Otros Canales de Contacto
         </h2>
         <ul className="mt-6 space-y-6">
           <li className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -38,15 +50,15 @@ export default function ContactoPage() {
               Correo Electrónico
             </h3>
             <p className="mt-2 text-[var(--color-text-light)]">
-              Escríbenos a{" "}
               <a href="mailto:ventas@disstands.com" className="font-medium text-primary underline hover:text-accent transition-colors">
                 ventas@disstands.com
               </a>{" "}
-              (ventas y presupuestos) o a{" "}
+              (ventas y presupuestos)
+              <br />
               <a href="mailto:moquetas@disstands.com" className="font-medium text-primary underline hover:text-accent transition-colors">
                 moquetas@disstands.com
               </a>{" "}
-              (asesoramiento técnico sobre pavimentos) y te responderemos en menos de 24 horas laborables.
+              (asesoramiento técnico sobre pavimentos)
             </p>
           </li>
           <li className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
@@ -59,18 +71,6 @@ export default function ContactoPage() {
             <p className="mt-2 text-[var(--color-text-light)]">
               Llámanos en horario de lunes a viernes, de 9:00 a 18:00 h.
               Atención directa sin contestadores automáticos.
-            </p>
-          </li>
-          <li className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-            <h3 className="flex items-center gap-2 text-lg font-semibold text-primary">
-              <svg className="h-5 w-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-              </svg>
-              Formulario de Contacto
-            </h3>
-            <p className="mt-2 text-[var(--color-text-light)]">
-              El formulario interactivo estará disponible próximamente en esta
-              misma página.
             </p>
           </li>
         </ul>

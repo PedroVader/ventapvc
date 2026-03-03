@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import {
@@ -109,12 +108,13 @@ export default async function CategoryPage({ params }: Props) {
                 className="group flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition-shadow hover:shadow-xl"
               >
                 <div className="relative h-48 overflow-hidden bg-gradient-to-br from-primary/5 to-primary-light/10">
-                  <Image
+                  <img
                     src={product.image}
                     alt={product.name}
                     width={400}
                     height={250}
                     className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                   {product.priceDisplay && (
                     <span className="absolute right-3 top-3 max-w-[60%] truncate rounded-full bg-accent px-3 py-1 text-sm font-bold text-white shadow">
