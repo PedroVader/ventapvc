@@ -38,6 +38,29 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} font-sans antialiased`}>
+        {/* Hidden forms for Netlify Forms detection on static export */}
+        <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="contacto" />
+          <input name="bot-field" />
+          <input name="nombre" />
+          <input name="email" />
+          <input name="telefono" />
+          <input name="ciudad" />
+          <input name="tipoSuelo" />
+          <input name="mensaje" />
+        </form>
+        <form name="presupuesto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+          <input type="hidden" name="form-name" value="presupuesto" />
+          <input name="bot-field" />
+          <input name="nombre" />
+          <input name="email" />
+          <input name="telefono" />
+          <input name="ciudad" />
+          <input name="tipoSuelo" />
+          <input name="metros" />
+          <input name="instalacion" />
+          <input name="mensaje" />
+        </form>
         <Header />
         <main>{children}</main>
         <Footer />

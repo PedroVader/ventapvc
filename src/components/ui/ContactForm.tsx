@@ -50,10 +50,13 @@ export default function ContactForm({
     const data = new FormData(form);
 
     try {
+      const body = new URLSearchParams();
+      data.forEach((value, key) => body.append(key, value as string));
+
       const res = await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data as unknown as Record<string, string>).toString(),
+        body: body.toString(),
       });
 
       if (res.ok) {
