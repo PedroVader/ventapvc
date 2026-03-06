@@ -1,6 +1,16 @@
 // src/data/blog.ts
 // Blog articles for ventapvc.com — SEO-optimized content
 
+export interface BlogFAQ {
+  question: string;
+  answer: string;
+}
+
+export interface HowToStep {
+  name: string;
+  text: string;
+}
+
 export interface BlogArticle {
   slug: string;
   title: string;
@@ -11,6 +21,16 @@ export interface BlogArticle {
   category: string;
   publishedDate: string; // ISO
   readingTime: number; // minutes
+  faqs?: BlogFAQ[];
+  howTo?: {
+    name: string;
+    description: string;
+    totalTime: string; // ISO 8601 duration
+    estimatedCost: { currency: string; value: string };
+    supply: string[];
+    tool: string[];
+    steps: HowToStep[];
+  };
 }
 
 export const articles: BlogArticle[] = [
@@ -127,6 +147,68 @@ export const articles: BlogArticle[] = [
 
 <p>En <strong>VentaPVC</strong> trabajamos con instaladores certificados en toda España. <a href="/presupuesto">Solicita presupuesto</a> y te enviamos un presupuesto personalizado que incluye material e instalación profesional.</p>
 `,
+    faqs: [
+      {
+        question: '¿Se puede instalar suelo PVC sobre azulejos existentes?',
+        answer: 'Sí, el suelo PVC se puede instalar directamente sobre azulejos siempre que la superficie esté limpia, seca, nivelada y las juntas no tengan desniveles superiores a 2 mm. No es necesario retirar el pavimento anterior.',
+      },
+      {
+        question: '¿Cuánto tiempo se tarda en instalar suelo PVC?',
+        answer: 'Depende del formato: el PVC en rollo se instala a un ritmo de 200-300 m²/hora con un equipo de 2 personas. El PVC click permite cubrir una habitación de 20 m² en 2-3 horas. Es el pavimento más rápido de instalar.',
+      },
+      {
+        question: '¿Necesito herramientas especiales para instalar PVC?',
+        answer: 'No, las herramientas básicas son un cúter con cuchillas nuevas, regla metálica, cinta métrica y rodillo de presión. Para PVC click también necesitarás maza de goma y cuñas de separación. No se requieren herramientas eléctricas.',
+      },
+      {
+        question: '¿Puedo instalar suelo PVC yo mismo o necesito un profesional?',
+        answer: 'La instalación DIY es viable para espacios pequeños y medianos. Recomendamos profesionales para superficies mayores de 50 m², subsuelos con desniveles, espacios comerciales/sanitarios o cuando se necesita soldadura de juntas.',
+      },
+    ],
+    howTo: {
+      name: 'Cómo instalar suelo de PVC en rollo',
+      description: 'Guía paso a paso para instalar suelo PVC en rollo con adhesivo o cinta de doble cara sobre cualquier superficie lisa y nivelada.',
+      totalTime: 'PT4H',
+      estimatedCost: { currency: 'EUR', value: '10-25 por m²' },
+      supply: [
+        'Suelo PVC en rollo',
+        'Cinta de doble cara o adhesivo específico para PVC',
+        'Cinta de soldadura en frío (para unir tiras)',
+      ],
+      tool: [
+        'Cúter con cuchillas nuevas',
+        'Regla metálica de 1 metro',
+        'Cinta métrica',
+        'Rodillo de presión',
+        'Escuadra de carpintero',
+      ],
+      steps: [
+        {
+          name: 'Aclimatar el material',
+          text: 'Deja el rollo de PVC en la habitación al menos 24 horas antes de la instalación, a temperatura ambiente entre 18 °C y 25 °C.',
+        },
+        {
+          name: 'Preparar la superficie',
+          text: 'Asegúrate de que el subsuelo está limpio, seco (humedad inferior al 2%), liso (sin desniveles superiores a 2 mm por metro) y firme. Aplica pasta niveladora si es necesario.',
+        },
+        {
+          name: 'Desenrollar el PVC',
+          text: 'Extiende el rollo dejando que suba unos 5 cm por las paredes. Deja reposar al menos 2 horas para que el material se asiente.',
+        },
+        {
+          name: 'Recortar el perímetro',
+          text: 'Con el cúter y la regla metálica, recorta el exceso dejando una holgura de 2-3 mm con la pared (que cubrirá el rodapié).',
+        },
+        {
+          name: 'Fijar el PVC al suelo',
+          text: 'Levanta la mitad del rollo, aplica cinta de doble cara o adhesivo en el subsuelo, y presiona el PVC con el rodillo de presión desde el centro hacia los bordes. Repite con la otra mitad.',
+        },
+        {
+          name: 'Unir tiras (si es necesario)',
+          text: 'Si necesitas más de una tira, solapa los bordes 2 cm, corta ambas capas a la vez con la regla y el cúter, retira los recortes y sella con cinta de soldadura en frío.',
+        },
+      ],
+    },
   },
 
   // ── 2. PVC vs otros suelos ──────────────────────────────────────────────────
@@ -233,6 +315,20 @@ export const articles: BlogArticle[] = [
 
 <p>¿Necesitas asesoramiento personalizado? En <strong>VentaPVC</strong> te ayudamos a elegir el suelo PVC perfecto para tu proyecto. <a href="/presupuesto">Solicita presupuesto gratuito</a> y recibe recomendaciones de nuestros expertos.</p>
 `,
+    faqs: [
+      {
+        question: '¿Es el suelo PVC más barato que la tarima o la cerámica?',
+        answer: 'Sí. El suelo PVC cuesta entre 6 y 25 €/m² (material), frente a los 30-80 €/m² de la tarima y 15-50 €/m² de la cerámica. Además, la instalación del PVC es más económica porque no requiere obra.',
+      },
+      {
+        question: '¿El suelo PVC resiste el agua mejor que el laminado?',
+        answer: 'Sí, el PVC es 100% impermeable, mientras que el laminado se daña irreversiblemente con el contacto prolongado con agua. El PVC es la mejor opción para cocinas, baños y zonas húmedas.',
+      },
+      {
+        question: '¿Cuánto dura un suelo PVC comparado con otros tipos de suelo?',
+        answer: 'Un suelo PVC de calidad dura entre 10 y 25 años según la capa de uso. La cerámica dura 30+ años y la tarima 25-50 años, pero el PVC ofrece mejor relación coste-durabilidad y es mucho más fácil de reemplazar.',
+      },
+    ],
   },
 
   // ── 3. Limpieza y mantenimiento ─────────────────────────────────────────────
@@ -343,6 +439,20 @@ export const articles: BlogArticle[] = [
 
 <p>¿Tu suelo PVC necesita una renovación? <a href="/presupuesto">Solicita presupuesto gratuito</a> y te asesoramos sobre la mejor opción para tu espacio.</p>
 `,
+    faqs: [
+      {
+        question: '¿Se puede fregar un suelo PVC con lejía?',
+        answer: 'No se recomienda usar lejía pura o sin diluir, ya que decolora y reseca la superficie. Si necesitas desinfectar, usa lejía muy diluida y aclara inmediatamente. Lo ideal es jabón neutro o un limpiador específico para PVC.',
+      },
+      {
+        question: '¿Con qué frecuencia hay que limpiar un suelo PVC?',
+        answer: 'Se recomienda barrer o aspirar a diario para retirar partículas abrasivas, y fregar con agua y jabón neutro 1-2 veces por semana. No requiere encerado, pulido ni tratamientos especiales.',
+      },
+      {
+        question: '¿Cómo se quitan las marcas negras de zapatos del suelo PVC?',
+        answer: 'Frota con una goma de borrar blanca o con un paño humedecido en alcohol isopropílico. Las marcas de zapatos desaparecen fácilmente del suelo PVC sin necesidad de productos agresivos.',
+      },
+    ],
   },
 
   // ── 4. Cómo elegir suelo PVC ────────────────────────────────────────────────
@@ -456,6 +566,24 @@ export const articles: BlogArticle[] = [
 
 <p>¿Ya sabes qué tipo de suelo PVC necesitas? <a href="/presupuesto">Solicita un presupuesto gratuito</a> en VentaPVC y recibirás una recomendación personalizada con precio, modelo y opciones de instalación. Te respondemos en menos de 24 horas.</p>
 `,
+    faqs: [
+      {
+        question: '¿Qué capa de uso necesito para mi suelo PVC?',
+        answer: 'Depende del tráfico: 0,15-0,20 mm para uso doméstico ligero (dormitorios), 0,25-0,30 mm para uso doméstico normal (salones, cocinas), 0,40-0,55 mm para uso comercial (oficinas, tiendas) y 0,65-0,70 mm para uso intensivo (hospitales, colegios).',
+      },
+      {
+        question: '¿Qué formato de suelo PVC es mejor: rollo, click o loseta?',
+        answer: 'El rollo es ideal para grandes superficies y acabado sin juntas. El click es perfecto para viviendas de alquiler porque se desmonta fácilmente. La loseta permite reemplazar piezas individuales. La elección depende de tu espacio y necesidades.',
+      },
+      {
+        question: '¿Cuánto cuesta el suelo PVC por metro cuadrado?',
+        answer: 'El precio varía entre 5-10 €/m² (gama económica y eventos), 10-18 €/m² (gama doméstica y oficinas) y 18-32 €/m² (gama profesional para hospitales y colegios). La instalación profesional añade entre 4 y 8 €/m².',
+      },
+      {
+        question: '¿El suelo PVC es apto para cocinas y baños?',
+        answer: 'Sí, el PVC es 100% impermeable en su superficie. Para baños con ducha directa al suelo, se recomienda formato rollo con juntas selladas. Para cocinas, cualquier formato es válido ya que los derrames ocasionales no causan daño.',
+      },
+    ],
   },
 
   // ── 5. Certificaciones y normativas — Trust article ─────────────────────────
@@ -644,6 +772,24 @@ export const articles: BlogArticle[] = [
 
 <p>¿Necesitas verificar que un suelo cumple las normativas de tu proyecto? <a href="/presupuesto">Solicita presupuesto gratuito</a> y nuestro equipo técnico te proporcionará toda la documentación necesaria. También puedes escribirnos a <a href="mailto:ventas@disstands.com">ventas@disstands.com</a>.</p>
 `,
+    faqs: [
+      {
+        question: '¿Qué certificación de fuego necesita un suelo PVC para un local comercial?',
+        answer: 'El Código Técnico de la Edificación (CTE) exige como mínimo Cfl-s1 para locales comerciales, pero la mayoría de inspecciones requieren Bfl-s1. Todos los suelos PVC de Disstands excepto el modelo Mipoldis cumplen Bfl-s1.',
+      },
+      {
+        question: '¿Es obligatorio el marcado CE en suelos PVC?',
+        answer: 'Sí, todo suelo PVC comercializado en el Espacio Económico Europeo debe llevar marcado CE según la norma EN 14041. Un suelo sin marcado CE no puede venderse legalmente en España.',
+      },
+      {
+        question: '¿Qué nivel de antideslizamiento necesito para un colegio o hospital?',
+        answer: 'Para colegios y hospitales se requiere como mínimo R10 según la norma DIN 51130. Para cocinas industriales, rampas y exteriores se necesita R11. Todos los suelos Disstands para uso profesional cumplen R10 como mínimo.',
+      },
+      {
+        question: '¿Los suelos PVC emiten sustancias tóxicas?',
+        answer: 'Los suelos PVC de calidad fabricados en la UE cumplen el reglamento REACH y los límites de emisiones de COV. Los suelos Disstands son seguros para viviendas, incluidas habitaciones infantiles, y espacios con requisitos de calidad del aire.',
+      },
+    ],
   },
 ];
 

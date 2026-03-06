@@ -65,10 +65,44 @@ export default async function BlogArticlePage({ params }: Props) {
     ],
   };
 
+  // JSON-LD: FAQPage (if article has FAQs)
+  const faqLd = article.faqs && article.faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: article.faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+    })),
+  } : null;
+
+  // JSON-LD: HowTo (if article has howTo data)
+  const howToLd = article.howTo ? {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: article.howTo.name,
+    description: article.howTo.description,
+    totalTime: article.howTo.totalTime,
+    estimatedCost: {
+      '@type': 'MonetaryAmount',
+      currency: article.howTo.estimatedCost.currency,
+      value: article.howTo.estimatedCost.value,
+    },
+    supply: article.howTo.supply.map((s) => ({ '@type': 'HowToSupply', name: s })),
+    tool: article.howTo.tool.map((t) => ({ '@type': 'HowToTool', name: t })),
+    step: article.howTo.steps.map((step) => ({
+      '@type': 'HowToStep',
+      name: step.name,
+      text: step.text,
+    })),
+  } : null;
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
+      {howToLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToLd) }} />}
 
       <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
@@ -109,6 +143,31 @@ export default async function BlogArticlePage({ params }: Props) {
           className="prose-ventapvc mt-10"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
+
+        {/* FAQs */}
+        {article.faqs && article.faqs.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold text-primary sm:text-3xl">
+              Preguntas Frecuentes
+            </h2>
+            <div className="mt-2 h-1 w-20 rounded-full bg-accent" />
+            <div className="mt-8 space-y-6">
+              {article.faqs.map((faq) => (
+                <article key={faq.question} className="rounded-xl border border-gray-200 bg-white p-6">
+                  <h3 className="flex items-start gap-3 text-lg font-semibold text-primary">
+                    <svg className="mt-0.5 h-6 w-6 shrink-0 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" />
+                    </svg>
+                    {faq.question}
+                  </h3>
+                  <p className="mt-3 pl-9 text-[var(--color-text-light)] leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="mt-16 rounded-xl bg-primary p-8 text-center text-white sm:p-12">

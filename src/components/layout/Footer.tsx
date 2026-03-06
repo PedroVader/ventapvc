@@ -175,19 +175,32 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Disstands branding */}
+        <div className="mt-8 border-t border-white/10 pt-6 text-center">
+          <p className="text-sm font-medium text-gray-300">
+            <strong className="text-white">VentaPVC.com</strong> es una marca de{' '}
+            <a
+              href="https://disstands.com"
+              className="font-semibold text-accent hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Disstands
+            </a>{' '}
+            &mdash; Fabricantes de pavimentos desde Barcelona
+          </p>
+        </div>
+
         {/* Bottom bar */}
-        <div className="mt-8 border-t border-white/10 pt-6">
+        <div className="mt-4 border-t border-white/10 pt-4">
           <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
             <Link href="/" className="flex flex-col" aria-label="VentaPVC.com - Inicio">
               <span className="text-lg font-bold leading-tight text-white">
                 VentaPVC<span className="text-accent">.com</span>
               </span>
-              <span className="text-[10px] leading-tight tracking-wide text-gray-500">
-                by Disstands
-              </span>
             </Link>
             <p className="text-center text-xs text-gray-500 sm:text-right">
-              &copy; 2025 VentaPVC.com &mdash; Marca de Disstands S.L.
+              &copy; 2025 VentaPVC.com &mdash; Todos los derechos reservados
             </p>
           </div>
         </div>

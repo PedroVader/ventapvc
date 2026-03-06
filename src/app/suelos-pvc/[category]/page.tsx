@@ -6,6 +6,7 @@ import {
   getCategoryBySlug,
   getProductsByCategorySlug,
 } from '@/data/products';
+import { articles } from '@/data/blog';
 
 type Props = { params: Promise<{ category: string }> };
 
@@ -57,6 +58,34 @@ export default async function CategoryPage({ params }: Props) {
     })),
   } : null;
 
+  // JSON-LD: ItemList (product carousel)
+  const itemListLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `Suelos PVC para ${category.name}`,
+    numberOfItems: products.length,
+    itemListElement: products.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: product.name,
+      url: `https://ventapvc.com/suelos-pvc/${category.slug}/${product.slug}`,
+    })),
+  };
+
+  // Blog articles relevant to this category
+  const categoryBlogMap: Record<string, string[]> = {
+    eventos: ['como-instalar-suelo-pvc', 'como-elegir-suelo-pvc', 'certificaciones-normativas-suelos-pvc'],
+    domestico: ['como-instalar-suelo-pvc', 'pvc-vs-otros-suelos', 'limpieza-mantenimiento-suelos-pvc', 'como-elegir-suelo-pvc'],
+    oficinas: ['como-elegir-suelo-pvc', 'pvc-vs-otros-suelos', 'limpieza-mantenimiento-suelos-pvc'],
+    colegios: ['certificaciones-normativas-suelos-pvc', 'limpieza-mantenimiento-suelos-pvc', 'como-elegir-suelo-pvc'],
+    hospital: ['certificaciones-normativas-suelos-pvc', 'limpieza-mantenimiento-suelos-pvc', 'como-elegir-suelo-pvc'],
+    otros: ['como-instalar-suelo-pvc', 'como-elegir-suelo-pvc', 'certificaciones-normativas-suelos-pvc'],
+  };
+  const relevantSlugs = categoryBlogMap[category.slug] || [];
+  const relevantArticles = relevantSlugs
+    .map((s) => articles.find((a) => a.slug === s))
+    .filter(Boolean);
+
   return (
     <>
       <script
@@ -69,6 +98,10 @@ export default async function CategoryPage({ params }: Props) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
         />
       )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
 
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
@@ -181,6 +214,36 @@ export default async function CategoryPage({ params }: Props) {
                     {faq.answer}
                   </p>
                 </article>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Blog articles */}
+        {relevantArticles.length > 0 && (
+          <section className="mt-16">
+            <h2 className="text-2xl font-bold text-primary sm:text-3xl">
+              Artículos del Blog sobre Suelos PVC
+            </h2>
+            <div className="mt-2 h-1 w-20 rounded-full bg-accent" />
+            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {relevantArticles.map((article) => (
+                <Link
+                  key={article!.slug}
+                  href={`/blog/${article!.slug}`}
+                  className="group overflow-hidden rounded-xl border border-gray-200 bg-white p-6 transition-shadow hover:shadow-lg"
+                >
+                  <span className="text-xs font-semibold text-accent">{article!.category}</span>
+                  <h3 className="mt-2 font-bold text-primary transition-colors group-hover:text-accent line-clamp-2">
+                    {article!.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-[var(--color-text-light)] line-clamp-3">
+                    {article!.excerpt}
+                  </p>
+                  <p className="mt-3 text-sm text-[var(--color-text-light)]">
+                    {article!.readingTime} min de lectura
+                  </p>
+                </Link>
               ))}
             </div>
           </section>
