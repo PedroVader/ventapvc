@@ -457,6 +457,194 @@ export const articles: BlogArticle[] = [
 <p>¿Ya sabes qué tipo de suelo PVC necesitas? <a href="/presupuesto">Solicita un presupuesto gratuito</a> en VentaPVC y recibirás una recomendación personalizada con precio, modelo y opciones de instalación. Te respondemos en menos de 24 horas.</p>
 `,
   },
+
+  // ── 5. Certificaciones y normativas — Trust article ─────────────────────────
+  {
+    slug: 'certificaciones-normativas-suelos-pvc',
+    title: 'Certificaciones y Normativas de Suelos PVC en España: Todo lo que Debes Saber',
+    excerpt:
+      'Guía completa sobre las certificaciones obligatorias y recomendadas para suelos PVC en España. Normativa de fuego, antideslizamiento, conductividad eléctrica, emisiones y más. Aprende a identificar un suelo PVC de calidad.',
+    category: 'Normativas',
+    publishedDate: '2025-05-12',
+    readingTime: 11,
+    metaTitle: 'Certificaciones y Normativas de Suelos PVC en España [2025]',
+    metaDescription:
+      'Todo sobre certificaciones de suelos PVC: reacción al fuego (Bfl-s1), antideslizamiento (R9-R11), EN 1081, EN 45545, emisiones VOC y Código Técnico de la Edificación. Guía para comprar con garantía.',
+    content: `
+<p>Cuando compras un suelo de PVC, no solo estás eligiendo un diseño y un precio: estás eligiendo un producto que debe cumplir <strong>normativas legales obligatorias</strong> en función del espacio donde se instale. Un suelo sin las certificaciones adecuadas puede ser rechazado en una inspección, generar responsabilidades legales en caso de accidente o, simplemente, deteriorarse mucho antes de lo esperado.</p>
+
+<p>En esta guía te explicamos <strong>cada certificación relevante</strong>, qué norma la regula, dónde es obligatoria y cómo verificar que el suelo PVC que compras la cumple. Es la información que todo comprador responsable — ya sea particular, arquitecto, facility manager o responsable de compras — debería conocer antes de tomar una decisión.</p>
+
+<h2>Reacción al Fuego: La Certificación Más Importante</h2>
+
+<h3>¿Qué es la clasificación Euroclass?</h3>
+
+<p>La reacción al fuego de los pavimentos se clasifica según la norma europea <strong>EN 13501-1</strong> en una escala de siete niveles, de A1fl (no combustible) a Ffl (sin requisitos). Para suelos PVC, las clasificaciones relevantes son:</p>
+
+<ul>
+  <li><strong>Bfl-s1:</strong> contribución muy limitada al fuego, producción de humo mínima. Es la clasificación más alta alcanzable por un suelo PVC y la <strong>exigida por el Código Técnico de la Edificación (CTE)</strong> en España para hospitales, colegios, oficinas, hoteles, centros comerciales y cualquier edificio de uso público.</li>
+  <li><strong>Cfl-s1:</strong> contribución limitada al fuego. Aceptable en algunos usos domésticos y comerciales de bajo riesgo.</li>
+  <li><strong>Efl:</strong> contribución alta al fuego. Solo apto para uso doméstico privado sin requisitos normativos.</li>
+</ul>
+
+<h3>¿Dónde es obligatoria la Bfl-s1?</h3>
+
+<p>El <strong>Documento Básico SI (Seguridad en caso de Incendio)</strong> del CTE establece que los pavimentos deben tener clasificación <strong>Cfl-s1 o superior</strong> en:</p>
+
+<ul>
+  <li>Zonas comunes de edificios de viviendas (portales, pasillos, escaleras)</li>
+  <li>Edificios de uso hospitalario y sanitario</li>
+  <li>Centros docentes (colegios, institutos, universidades)</li>
+  <li>Edificios de uso administrativo (oficinas públicas y privadas)</li>
+  <li>Establecimientos de uso comercial y hostelería</li>
+  <li>Recintos de pública concurrencia (teatros, cines, pabellones deportivos)</li>
+  <li>Aparcamientos y garajes</li>
+</ul>
+
+<p>En la práctica, la mayoría de recintos feriales, hospitales y colegios exigen directamente <strong>Bfl-s1</strong> como mínimo. Todos los suelos PVC de <a href="/suelos-pvc">Disstands</a>, excepto el modelo económico Mipoldis (clasificación Efl, destinado exclusivamente a uso doméstico), cumplen con la clasificación <strong>Bfl-s1</strong>.</p>
+
+<h3>¿Cómo verificarlo?</h3>
+
+<p>Solicita al proveedor el <strong>informe de ensayo</strong> según EN ISO 11925-2 (ignitabilidad) y EN ISO 9239-1 (propagación de llama) emitido por un laboratorio acreditado. El informe debe indicar la clasificación Euroclass asignada. En VentaPVC, proporcionamos la documentación técnica de cada producto bajo petición. <a href="/presupuesto">Solicita tu presupuesto</a> e incluimos las fichas técnicas.</p>
+
+<h2>Resistencia al Deslizamiento: Seguridad en Cada Paso</h2>
+
+<h3>La norma DIN 51130 y las clases R9 a R13</h3>
+
+<p>La resistencia al deslizamiento se mide según la norma alemana <strong>DIN 51130</strong> (método de la rampa con operario calzado) y se clasifica en niveles de R9 (mínimo) a R13 (máximo). A mayor número, mayor agarre:</p>
+
+<ul>
+  <li><strong>R9:</strong> apto para espacios interiores secos. Salones, dormitorios, oficinas sin riesgo de humedad.</li>
+  <li><strong>R10:</strong> el estándar recomendado para la mayoría de usos. Obligatorio en <a href="/suelos-pvc/colegios">colegios</a>, <a href="/suelos-pvc/hospital">hospitales</a>, cocinas, baños y zonas húmedas. Todos los suelos Disstands para uso profesional cumplen R10 como mínimo.</li>
+  <li><strong>R11:</strong> alta resistencia al deslizamiento. Requerido en cocinas industriales, rampas, <a href="/suelos-pvc/otros/pvc-exterior">terrazas exteriores</a>, <a href="/suelos-pvc/otros/pvc-garaje">garajes</a> y <a href="/suelos-pvc/otros/pvc-transporte">suelos de transporte público</a>.</li>
+  <li><strong>R12-R13:</strong> resistencia extrema para industria alimentaria, piscinas y entornos con aceites.</li>
+</ul>
+
+<h3>El CTE y la resbaladicidad en España</h3>
+
+<p>El <strong>Documento Básico SUA (Seguridad de Utilización y Accesibilidad)</strong> del CTE clasifica los suelos en cuatro clases según el valor de resistencia al deslizamiento Rd:</p>
+
+<ul>
+  <li><strong>Clase 1 (Rd 15-35):</strong> zonas interiores secas con pendiente &lt; 6%</li>
+  <li><strong>Clase 2 (Rd 35-45):</strong> zonas interiores húmedas (cocinas, baños, entradas desde el exterior)</li>
+  <li><strong>Clase 3 (Rd &gt; 45):</strong> zonas exteriores, piscinas, duchas</li>
+</ul>
+
+<p>Un suelo PVC con clasificación <strong>R10 cumple la Clase 2</strong> del CTE, y un <strong>R11 cumple la Clase 3</strong>. Esto es especialmente relevante en proyectos que requieren licencia de obra o apertura de actividad, donde el cumplimiento es verificado por la inspección técnica.</p>
+
+<h2>Resistividad Eléctrica: EN 1081</h2>
+
+<p>La norma <strong>EN 1081</strong> regula las propiedades eléctricas de los pavimentos y distingue tres categorías:</p>
+
+<ul>
+  <li><strong>Pavimento estándar:</strong> sin requisitos de resistividad eléctrica. Apto para la mayoría de espacios.</li>
+  <li><strong>Pavimento disipativo (antiestático):</strong> resistividad entre 10⁶ y 10⁹ ohmios. Necesario en salas con equipos electrónicos sensibles: salas de resonancia magnética, <a href="/suelos-pvc/colegios/pvc-antiestatico">aulas de informática</a>, centros de datos y laboratorios. El <a href="/suelos-pvc/hospital/pvc-antiestatico-hospital">PVC Antiestático Hospital de Disstands</a> cumple este rango.</li>
+  <li><strong>Pavimento conductivo:</strong> resistividad inferior a 10⁶ ohmios. Obligatorio en quirófanos con gases anestésicos inflamables y zonas clasificadas ATEX (riesgo de explosión). El <a href="/suelos-pvc/hospital/pvc-conductivo">PVC Conductivo de Disstands</a> cumple esta exigencia con certificación para uso en quirófanos de última generación.</li>
+</ul>
+
+<p>La instalación de suelos disipativos y conductivos requiere <strong>adhesivo conductivo</strong> y <strong>bandas de cobre</strong> conectadas a la toma de tierra del edificio. No es una instalación DIY: debe realizarla un instalador profesional certificado.</p>
+
+<h2>Normativa de Transporte: EN 45545</h2>
+
+<p>Los suelos para vehículos de transporte público (autobuses, trenes, tranvías, metro) deben cumplir la norma europea <strong>EN 45545</strong>, que regula de forma conjunta:</p>
+
+<ul>
+  <li>Reacción al fuego</li>
+  <li>Emisión y toxicidad de humos</li>
+  <li>Propagación de llama</li>
+  <li>Goteo de material inflamable</li>
+</ul>
+
+<p>Esta norma es significativamente más exigente que la Bfl-s1 estándar, ya que en un vehículo en movimiento la evacuación es mucho más difícil. El <a href="/suelos-pvc/otros/pvc-transporte">PVC Transporte de Disstands</a> está certificado EN 45545 y se utiliza en flotas de autobuses urbanos y trenes de cercanías en España.</p>
+
+<h2>Emisiones de COV: Calidad del Aire Interior</h2>
+
+<h3>¿Qué son los COV?</h3>
+
+<p>Los <strong>Compuestos Orgánicos Volátiles (COV)</strong> son sustancias químicas que se evaporan a temperatura ambiente y pueden afectar a la calidad del aire interior. Algunos suelos de baja calidad pueden emitir formaldehído, ftalatos y otros compuestos nocivos, especialmente cuando son nuevos (el conocido "olor a nuevo").</p>
+
+<h3>Certificaciones de emisiones</h3>
+
+<ul>
+  <li><strong>EN 16516:</strong> norma europea para la determinación de emisiones de COV de productos de construcción. Establece límites de emisión tras 28 días de instalación.</li>
+  <li><strong>A+ (Francia):</strong> la clasificación de emisiones más exigente en Europa. Indica emisiones muy bajas de formaldehído, acetaldehído, tolueno y otros COV. Aunque no es obligatoria en España, es un indicador fiable de calidad.</li>
+  <li><strong>REACH (UE):</strong> el reglamento europeo REACH regula las sustancias químicas y restringe el uso de ftalatos nocivos (como DEHP, DBP y BBP) en productos de consumo. Todos los suelos PVC fabricados y comercializados legalmente en la UE deben cumplir REACH.</li>
+</ul>
+
+<p>Los suelos PVC de Disstands se fabrican en instalaciones que cumplen la normativa REACH y los límites de emisiones de la UE. Esto garantiza que son seguros para su uso en viviendas, incluidas habitaciones infantiles, y en espacios con requisitos de calidad del aire como hospitales y colegios.</p>
+
+<h2>Capa de Uso y Clasificación de Uso: EN ISO 10874</h2>
+
+<p>La norma <strong>EN ISO 10874</strong> clasifica los pavimentos según su destino de uso y la intensidad de tráfico que soportan. Es una referencia clave para elegir correctamente:</p>
+
+<ul>
+  <li><strong>Clase 21-23 (doméstico):</strong> desde uso ligero (dormitorio de invitados) hasta uso intenso (salón familiar, cocina). Los suelos con capa de uso de 0,15 a 0,30 mm se sitúan aquí.</li>
+  <li><strong>Clase 31-34 (comercial):</strong> desde uso moderado (despacho individual) hasta uso muy intenso (centro comercial, aeropuerto). Requiere capa de uso de 0,40 mm o superior.</li>
+  <li><strong>Clase 41-43 (industrial):</strong> uso industrial ligero a pesado. Capa de uso de 0,65 mm o más.</li>
+</ul>
+
+<p>Todos los productos de Disstands tienen indicada su clasificación de uso en la ficha técnica. Por ejemplo:</p>
+
+<ul>
+  <li><a href="/suelos-pvc/domestico/mipoldis">Mipoldis</a> (0,15 mm): Clase 21 — uso doméstico ligero</li>
+  <li><a href="/suelos-pvc/domestico/pvc-pradis">PVC Pradis</a> (0,40 mm): Clase 23/31 — doméstico intenso / comercial moderado</li>
+  <li><a href="/suelos-pvc/oficinas/loseta-oficina-premium">Loseta Oficina Premium</a> (0,70 mm): Clase 34/42 — comercial intenso / industrial moderado</li>
+  <li><a href="/suelos-pvc/hospital/fordis-homogeneo">Fordis Homogéneo</a> (todo el espesor): Clase 34/43 — máxima clasificación</li>
+</ul>
+
+<h2>Marcado CE: Obligatorio en Europa</h2>
+
+<p>Todo suelo PVC comercializado en el Espacio Económico Europeo debe llevar el <strong>marcado CE</strong> según la norma armonizada <strong>EN 14041</strong> (pavimentos resilientes). El marcado CE certifica que el fabricante ha evaluado y declarado las prestaciones del producto en relación con:</p>
+
+<ul>
+  <li>Reacción al fuego</li>
+  <li>Contenido de pentaclorofenol (PCP) y formaldehído</li>
+  <li>Resistencia al deslizamiento</li>
+  <li>Emisiones de COV</li>
+  <li>Conductividad eléctrica (si procede)</li>
+  <li>Comportamiento frente al agua</li>
+</ul>
+
+<p>El marcado CE no es una marca de calidad opcional: es un <strong>requisito legal</strong>. Un suelo PVC sin marcado CE no puede venderse legalmente en España. Todos los suelos de Disstands llevan marcado CE con su correspondiente <strong>Declaración de Prestaciones (DoP)</strong> disponible bajo solicitud.</p>
+
+<h2>Cómo Identificar un Suelo PVC de Calidad: 7 Señales</h2>
+
+<p>Cuando comparas proveedores, estas son las señales que distinguen un producto fiable de uno que puede darte problemas:</p>
+
+<ol>
+  <li><strong>Marcado CE visible:</strong> debe estar en el embalaje y en la documentación. Si no lo tiene, no es legal.</li>
+  <li><strong>Ficha técnica completa:</strong> un fabricante serio proporciona espesor total, capa de uso, clasificación de fuego, resistencia al deslizamiento, clasificación de uso y emisiones. Si solo te dan un nombre comercial y un precio, desconfía.</li>
+  <li><strong>Clasificación de fuego certificada:</strong> no basta con que el vendedor diga "Bfl-s1". Debe existir un informe de ensayo de un laboratorio acreditado (AIDICO, LGAI, Applus+, etc.).</li>
+  <li><strong>Fabricante identificable:</strong> un producto con marca, origen de fabricación claro y datos de contacto del fabricante es más fiable que un producto "blanco" de origen desconocido.</li>
+  <li><strong>Capa de uso declarada en milímetros:</strong> evita fabricantes que solo indican "alta resistencia" sin cuantificar. La capa de uso en mm es el dato objetivo que determina la durabilidad.</li>
+  <li><strong>Garantía por escrito:</strong> los fabricantes serios ofrecen garantía de producto (no solo la legal de 2 años). Disstands respalda sus productos con garantía específica según el modelo y el uso.</li>
+  <li><strong>Muestras disponibles:</strong> poder ver y tocar el material antes de comprar es señal de transparencia. En VentaPVC enviamos muestras gratuitas de cualquier modelo. <a href="/presupuesto">Solicítalas aquí</a>.</li>
+</ol>
+
+<h2>Errores Comunes al Comprar Suelos PVC</h2>
+
+<ul>
+  <li><strong>Elegir solo por precio:</strong> un suelo PVC de 3-4 €/m² sin marcado CE ni certificaciones puede parecer un chollo, pero supone un riesgo legal (si la inspección lo rechaza deberás cambiarlo) y de salud (emisiones no controladas).</li>
+  <li><strong>Ignorar la clasificación de fuego:</strong> instalar un suelo sin Bfl-s1 en un espacio público es ilegal y puede invalidar el seguro del local en caso de incendio.</li>
+  <li><strong>No verificar el antideslizamiento:</strong> un suelo resbaladizo en una cocina, colegio o residencia de mayores es un accidente esperando a ocurrir. Exige como mínimo R10 en zonas húmedas.</li>
+  <li><strong>Confundir espesor total con capa de uso:</strong> un suelo de 4 mm de espesor total pero con solo 0,15 mm de capa de uso se desgastará mucho antes que uno de 2,5 mm de espesor con 0,40 mm de capa de uso. La capa de uso es lo que realmente importa.</li>
+</ul>
+
+<h2>Compromiso de VentaPVC con la Calidad</h2>
+
+<p>En VentaPVC, como distribuidores oficiales de <strong>Disstands</strong>, trabajamos exclusivamente con productos que cumplen las normativas europeas y españolas vigentes. Esto significa:</p>
+
+<ul>
+  <li><strong>100% marcado CE:</strong> todos nuestros productos llevan marcado CE según EN 14041.</li>
+  <li><strong>Certificaciones verificables:</strong> proporcionamos informes de ensayo, fichas técnicas y Declaraciones de Prestaciones de cada producto.</li>
+  <li><strong>Asesoramiento normativo:</strong> te indicamos qué certificaciones necesitas según tu espacio y te ayudamos a cumplir con el CTE y la normativa sectorial.</li>
+  <li><strong>Trazabilidad completa:</strong> cada lote de producto es trazable hasta la línea de fabricación.</li>
+  <li><strong>Envío a toda España:</strong> con documentación completa para inspecciones y certificaciones de obra.</li>
+</ul>
+
+<p>¿Necesitas verificar que un suelo cumple las normativas de tu proyecto? <a href="/presupuesto">Solicita presupuesto gratuito</a> y nuestro equipo técnico te proporcionará toda la documentación necesaria. También puedes escribirnos a <a href="mailto:ventas@disstands.com">ventas@disstands.com</a>.</p>
+`,
+  },
 ];
 
 // ─── HELPER FUNCTIONS ──────────────────────────────────────────────────────────
